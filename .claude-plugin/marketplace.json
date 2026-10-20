@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "vitaecontext",
+  "owner": {
+    "name": "VitaeContext"
+  },
+  "plugins": [
+    {
+      "name": "vitaecontext",
+      "source": "./",
+      "description": "VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.",
+      "version": "2.3.0",
+      "category": "productivity",
+      "keywords": [
+        "career",
+        "vitaegraph"
+      ],
+      "license": "MIT"
+    }
+  ]
+}

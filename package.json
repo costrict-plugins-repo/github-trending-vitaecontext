@@ -1,0 +1,83 @@
+{
+  "name": "vitaecontext",
+  "version": "2.3.0",
+  "description": "VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bin": {
+    "vitaecontext": "bin/vitaecontext.mjs",
+    "vitaecontext-mcp": "bin/vitaecontext-mcp.mjs",
+    "agentkit-seo": "bin/vitaecontext.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitaecontext/vitaecontext.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vitaecontext/vitaecontext/issues"
+  },
+  "homepage": "https://vitaecontext.github.io/",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    ".agents/plugins",
+    ".claude-plugin",
+    "bin",
+    "src",
+    "skills",
+    "providers",
+    "mcp",
+    "hub",
+    "evals/groundedness",
+    "vitaegraph",
+    ".assets/docs/getting-started.md",
+    ".assets/docs/end-to-end-workflows.md",
+    ".assets/docs/fictional-end-to-end-demo.md",
+    ".assets/docs/current-status.md",
+    ".assets/docs/project.md",
+    ".assets/docs/architecture-map.md",
+    ".assets/docs/STYLEGUIDE.md",
+    "gemini-extension.json",
+    "GEMINI.md",
+    "llms.txt",
+    "llms-full.txt",
+    "commands",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "DESIGN.md",
+    "MAINTAINING.md",
+    "PRIVACY.md",
+    "README.md",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "mcp": "node bin/vitaecontext-mcp.mjs",
+    "export": "node bin/vitaecontext.mjs export",
+    "install:skills": "node bin/vitaecontext.mjs install",
+    "list:providers": "node bin/vitaecontext.mjs list providers",
+    "list:skills": "node bin/vitaecontext.mjs list skills",
+    "sync:codex-plugin": "node src/sync-codex-plugin.mjs",
+    "check:codex-plugin": "node src/sync-codex-plugin.mjs --check",
+    "test": "node --test test/*.test.mjs",
+    "validate": "node bin/vitaecontext.mjs doctor",
+    "validate:package": "node src/package-audit.mjs",
+    "version:cli": "node bin/vitaecontext.mjs version"
+  },
+  "keywords": [
+    "agent-skills",
+    "ai-agents",
+    "antigravity-cli",
+    "mcp",
+    "model-context-protocol",
+    "personal-branding",
+    "career-context",
+    "local-first",
+    "professional-context",
+    "career-knowledge-graph"
+  ],
+  "license": "MIT"
+}
