@@ -1,0 +1,50 @@
+# AGENTS.md
+
+## Scope
+
+These instructions apply to the whole repository.
+
+## Start here
+
+1. Read `.assets/docs/architecture-map.md` to identify the correct layer before editing.
+2. Read `.assets/docs/STYLEGUIDE.md` before changing Markdown, examples, templates, or skill references.
+3. Load only the relevant platform skill and references for the task.
+
+## Source of truth
+
+- Keep runtime methodology in `skills/`.
+- Keep provider folders thin. Treat `providers/` as adapter-specific install notes, wrapper commands, and metadata.
+- Keep the core engine and CLI implementation in `src/` and executables in `bin/`.
+- Keep public project positioning, install commands, and module summaries in `README.md`.
+- Do not commit Career Context files, user career exports, screenshots, or unstaged generated install output.
+
+## Brand contract
+
+- Product: **VitaeContext**. Tagline: **Keep your career context. Reuse it across AI.**
+- Canonical definition: **VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.**
+- Position VitaeContext as the context layer before agent-assisted career systems and workflows. It is provider- and system-agnostic: it prepares the precise, evidence-bounded Career Context those systems use, rather than depending on a particular CV builder, application tool, or AI provider.
+- Use **Career Context** for the private user-owned artifact. Describe **VitaeGraph** as VitaeContext's optional deeper structured-record layer.
+- Frame the product as career-context infrastructure. SEO, AEO, ATS, and platform optimization are capabilities of focused modules, not the umbrella identity.
+- Keep `agentkit-seo` only where compatibility behavior or migration history requires it.
+- Use the established brand assets under `.assets/image/`. Do not remove historical visual assets solely because they predate the rename.
+- Brand colors: `#123C2D`, `#1F684B`, `#91B9A3`, `#E7F0EB`, `#F7F5EF`, `#0D2019`, `#18201C`, `#5C6861`, and `#CED8D2`. Semantic accents: `#287A55`, `#4C7180`, `#B7792D`, `#A14E46`, and `#716B86`.
+
+## Editing rules
+
+- Prefer narrow edits that follow the existing repository structure.
+- Keep Markdown plain, factual, and source-aware.
+- Separate documented platform behavior from inference.
+- Do not invent SEO, ATS, GitHub, LinkedIn, X, or provider ranking guarantees.
+- Update dependent docs when package behavior, provider behavior, or public workflows change.
+- When writing or updating `wiki/` entries inside `skills/`, keep them factual, compact, and runtime-oriented. Each wiki file must start with the VitaeContext wiki metadata block, use only the allowed confidence values, update `last_reviewed` when claims are meaningfully checked, and mark stale, disputed, or source-dependent claims instead of presenting them as stable facts.
+
+## Validation
+
+Run the smallest relevant check for the change:
+
+```bash
+npm run validate
+node bin/vitaecontext.mjs version
+node bin/vitaecontext.mjs export --provider all --output /tmp/vitaecontext-export --force
+npm pack --dry-run
+```

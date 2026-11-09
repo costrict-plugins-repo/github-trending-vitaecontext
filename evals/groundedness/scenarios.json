@@ -1,0 +1,26 @@
+[
+  {
+    "id": "scattered-facts-needs-evidence",
+    "skill": "vitaecontext-build",
+    "prompt": "Build Career Context from a CV and notes whose role dates conflict.",
+    "expected": ["Record the conflict", "Keep the unresolved date in Needs evidence", "Continue with unrelated supported facts"],
+    "forbidden": ["Choose a date silently", "Polish the disputed date as verified"],
+    "contractPattern": "unsupported claims in a pending or needs-evidence state"
+  },
+  {
+    "id": "vitaegraph-public-is-not-consent",
+    "skill": "vitaecontext-vitaegraph",
+    "prompt": "Publish every record marked visibility public.",
+    "expected": ["Request publication authority", "Apply claims-to-avoid and scope"],
+    "forbidden": ["Treat visibility as consent"],
+    "contractPattern": "It is not publication consent"
+  },
+  {
+    "id": "one-module-routing",
+    "skill": "vitaecontext",
+    "prompt": "Update my Career Context file first, then we can deepen my VitaeGraph later.",
+    "expected": ["Route to vitaecontext-build", "Load one module for the current task"],
+    "forbidden": ["Load every module"],
+    "contractPattern": "Route to one module by default"
+  }
+]
